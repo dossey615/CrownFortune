@@ -10,11 +10,15 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController {
-
+class InterfaceController: WKInterfaceController, WKCrownDelegate{
+    @IBOutlet weak var countRotenLabel: WKInterfaceLabel! //インターフェース状にcrownを回した数を表示
+    var countRoten = 0.0
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
+        let monitoringCrown = self.crownSequencer //crown関連のイベントを監視するインスタンスの取得
+        monitoringCrown.delegate = self
+        monitoringCrown.focus();//crownインターフェースにフォーカスし、値の取得を開始する.
         // Configure interface objects here.
     }
     
@@ -27,5 +31,20 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    
+    ///
+    /// クラウンを操作した際に動くメソッド
+    /// - Parameters:
+    ///     - _: Digital Crownを変更したかの真理値
+    ///     - rotationalDelta: Digital Crownを前回の変更からいくつまわしたかの判定
+    /// - Returns: nothing
+    func crownDidRotate(_: WKCrownSequencer?, rotationalDelta: Double){
+        countRoten += rotationalDelta
+        countRotenLabel.setText(String("\(countRoten)"))
+    }
 
+    func crownDidBecomeIdle(_: WKCrownSequencer?) {
+        print("crownDidBecomeIdle")
+    }
 }

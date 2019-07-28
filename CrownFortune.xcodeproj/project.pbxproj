@@ -210,11 +210,27 @@
 				E3D6FD5122EDD71500CBD0EC /* InterfaceController.swift */,
 				E3D6FD5322EDD71500CBD0EC /* ExtensionDelegate.swift */,
 				E3D6FD5522EDD71500CBD0EC /* NotificationController.swift */,
+				E3FA0F7C22EDDD28000C74E8 /* src */,
+				E3FA0F7D22EDDD43000C74E8 /* view */,
 				E3D6FD5722EDD71600CBD0EC /* Assets.xcassets */,
 				E3D6FD5922EDD71600CBD0EC /* Info.plist */,
 				E3D6FD5A22EDD71600CBD0EC /* PushNotificationPayload.apns */,
 			);
 			path = "CrownFortune WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		E3FA0F7C22EDDD28000C74E8 /* src */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		E3FA0F7D22EDDD43000C74E8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
