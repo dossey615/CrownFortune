@@ -1,1 +1,2 @@
 # CrownFortune
+お試し
