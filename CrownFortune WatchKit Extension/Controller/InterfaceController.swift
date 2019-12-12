@@ -14,12 +14,14 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
 
     @IBOutlet weak var countRotenLabel: WKInterfaceLabel!//インターフェース状にcrownを回した数を表示
     @IBOutlet weak var handleImage: WKInterfaceImage!
+    @IBOutlet weak var gachaImage: WKInterfaceImage!
     
-    final let MAX_ROTATION_VALUE = 73.0
+    final let MAX_ROTATION_VALUE = 72.0
     final let MIN_ROTATION_VALUE = 0.0
     
     var countRotation:Double = 1.0
-    var oldCountValue:Double = 0.0
+    var oldCountValue:Double = 72.0
+    var changeCountValue:Double = 0.0
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         let monitoringCrown = self.crownSequencer //crown関連のイベントを監視するインスタンスの取得
@@ -51,10 +53,16 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
         if countRotation >= MAX_ROTATION_VALUE {
             countRotation = 1.0
         } else if countRotation <= MIN_ROTATION_VALUE {
-            countRotation = 72.0
+            countRotation = 71.0
         }
-        oldCountValue = countRotation
-        spinHandle(rotationValue: countRotation, beforeRotationValue: oldCountValue)
+        changeCountValue += (MAX_ROTATION_VALUE - countRotation)
+        print(changeCountValue)
+        if(changeCountValue >= 4000.0){
+            gachaImage.setImageNamed("red")
+        } else {
+            spinHandle(rotationValue: countRotation, beforeRotationValue: oldCountValue)
+        }
+        
     }
 
     func crownDidBecomeIdle(_: WKCrownSequencer?) {
