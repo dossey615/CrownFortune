@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--box-1-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="CrownFortune_WatchKit_App" customModuleProvider="target">
+                <controller backgroundImage="box-1" contentMode="scaleAspectFill" fullBounds="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="CrownFortune_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label height="31" alignment="left" text="エラー丸" id="1Ro-i9-ntd"/>
+                        <label alignment="left" text="Label" id="tg9-WF-U7P">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                        <group width="0.80000000000000004" height="0.40000000000000002" alignment="center" verticalAlignment="bottom" id="oyJ-Gn-hlf">
+                            <items>
+                                <imageView width="0.5" height="0.90000000000000002" alignment="left" verticalAlignment="bottom" id="Jk7-v7-XFo"/>
+                                <imageView width="0.5" height="0.90000000000000002" alignment="left" verticalAlignment="center" semanticContentAttribute="spatial" image="handleImage71" contentMode="scaleAspectFill" id="6oC-gZ-sLB">
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </imageView>
+                                <separator alignment="left" id="mpL-Ep-8a3"/>
+                            </items>
+                        </group>
                     </items>
                     <connections>
-                        <outlet property="countRotenLabel" destination="1Ro-i9-ntd" id="SRn-Q0-pVi"/>
+                        <outlet property="countRotenLabel" destination="tg9-WF-U7P" id="wh4-30-LeJ"/>
+                        <outlet property="handleImage" destination="6oC-gZ-sLB" id="873-JV-kUM"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="219" y="344"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -55,4 +65,8 @@
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="box-1" width="700" height="700"/>
+        <image name="handleImage71" width="400" height="400"/>
+    </resources>
 </document>

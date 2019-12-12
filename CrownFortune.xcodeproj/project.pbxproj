@@ -96,13 +96,13 @@
 		E3D6FD3A22EDD71400CBD0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D6FD3D22EDD71400CBD0EC /* CrownFortune WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrownFortune WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D6FD4322EDD71400CBD0EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		E3D6FD4522EDD71500CBD0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3D6FD4522EDD71500CBD0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../CrownFortune WatchKit App/View/Assets.xcassets"; sourceTree = "<group>"; };
 		E3D6FD4722EDD71500CBD0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D6FD4C22EDD71500CBD0EC /* CrownFortune WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CrownFortune WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D6FD5122EDD71500CBD0EC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		E3D6FD5322EDD71500CBD0EC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		E3D6FD5522EDD71500CBD0EC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		E3D6FD5722EDD71600CBD0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3D6FD5722EDD71600CBD0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "CrownFortune WatchKit App/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		E3D6FD5922EDD71600CBD0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D6FD5A22EDD71600CBD0EC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +139,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3115F5B2312E11A009FF868 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E3D6FD5122EDD71500CBD0EC /* InterfaceController.swift */,
+				E3D6FD5522EDD71500CBD0EC /* NotificationController.swift */,
+				E3D6FD4522EDD71500CBD0EC /* Assets.xcassets */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3115F5D2312E16F009FF868 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E3D6FD0C22EDD71100CBD0EC = {
 			isa = PBXGroup;
 			children = (
@@ -198,8 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				E3D6FD4222EDD71400CBD0EC /* Interface.storyboard */,
-				E3D6FD4522EDD71500CBD0EC /* Assets.xcassets */,
 				E3D6FD4722EDD71500CBD0EC /* Info.plist */,
+				E3D6FD5722EDD71600CBD0EC /* Assets.xcassets */,
 			);
 			path = "CrownFortune WatchKit App";
 			sourceTree = "<group>";
@@ -207,30 +224,13 @@
 		E3D6FD5022EDD71500CBD0EC /* CrownFortune WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E3D6FD5122EDD71500CBD0EC /* InterfaceController.swift */,
 				E3D6FD5322EDD71500CBD0EC /* ExtensionDelegate.swift */,
-				E3D6FD5522EDD71500CBD0EC /* NotificationController.swift */,
-				E3FA0F7C22EDDD28000C74E8 /* src */,
-				E3FA0F7D22EDDD43000C74E8 /* view */,
-				E3D6FD5722EDD71600CBD0EC /* Assets.xcassets */,
+				E3115F5D2312E16F009FF868 /* View */,
+				E3115F5B2312E11A009FF868 /* Controller */,
 				E3D6FD5922EDD71600CBD0EC /* Info.plist */,
 				E3D6FD5A22EDD71600CBD0EC /* PushNotificationPayload.apns */,
 			);
 			path = "CrownFortune WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		E3FA0F7C22EDDD28000C74E8 /* src */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		E3FA0F7D22EDDD43000C74E8 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +331,7 @@
 		E3D6FD0D22EDD71100CBD0EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "土居将史";
 				TargetAttributes = {
