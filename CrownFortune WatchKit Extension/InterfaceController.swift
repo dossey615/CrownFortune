@@ -8,10 +8,16 @@
 
 import WatchKit
 import Foundation
+import SpriteKit
 
 
 class InterfaceController: WKInterfaceController, WKCrownDelegate{
-    @IBOutlet weak var countRotenLabel: WKInterfaceLabel! //インターフェース状にcrownを回した数を表示
+    
+    @IBOutlet weak var countRotenLabel: WKInterfaceLabel!//インターフェース状にcrownを回した数を表示
+    @IBOutlet weak var handle: WKInterfaceImage!
+    @IBOutlet weak var handler:WKInterfaceSKScene!
+    @IBOutlet private weak var hogeView: AnimationScene!
+    
     var countRoten = 0.0
     
     override func awake(withContext context: Any?) {
@@ -42,9 +48,12 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
     func crownDidRotate(_: WKCrownSequencer?, rotationalDelta: Double){
         countRoten += rotationalDelta
         countRotenLabel.setText(String("\(countRoten)"))
+    
     }
 
     func crownDidBecomeIdle(_: WKCrownSequencer?) {
         print("crownDidBecomeIdle")
     }
+    
 }
+
