@@ -23,6 +23,7 @@
 		E3D6FD5622EDD71500CBD0EC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6FD5522EDD71500CBD0EC /* NotificationController.swift */; };
 		E3D6FD5822EDD71600CBD0EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D6FD5722EDD71600CBD0EC /* Assets.xcassets */; };
 		E3E28E0623A33B9B0061A3ED /* crownValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E28E0523A33B9B0061A3ED /* crownValue.swift */; };
+		E3E28E0823A3AD3C0061A3ED /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = E3E28E0723A3AD3C0061A3ED /* .gitkeep */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		E3D6FD5922EDD71600CBD0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D6FD5A22EDD71600CBD0EC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		E3E28E0523A33B9B0061A3ED /* crownValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crownValue.swift; sourceTree = "<group>"; };
+		E3E28E0723A3AD3C0061A3ED /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		E3115F5D2312E16F009FF868 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E3E28E0723A3AD3C0061A3ED /* .gitkeep */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D6FD5822EDD71600CBD0EC /* Assets.xcassets in Resources */,
+				E3E28E0823A3AD3C0061A3ED /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
