@@ -22,6 +22,7 @@
 		E3D6FD5422EDD71500CBD0EC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6FD5322EDD71500CBD0EC /* ExtensionDelegate.swift */; };
 		E3D6FD5622EDD71500CBD0EC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6FD5522EDD71500CBD0EC /* NotificationController.swift */; };
 		E3D6FD5822EDD71600CBD0EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D6FD5722EDD71600CBD0EC /* Assets.xcassets */; };
+		E3E28E0623A33B9B0061A3ED /* crownValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E28E0523A33B9B0061A3ED /* crownValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		E3D6FD5722EDD71600CBD0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "CrownFortune WatchKit App/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		E3D6FD5922EDD71600CBD0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D6FD5A22EDD71600CBD0EC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		E3E28E0523A33B9B0061A3ED /* crownValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crownValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,12 +227,21 @@
 			isa = PBXGroup;
 			children = (
 				E3D6FD5322EDD71500CBD0EC /* ExtensionDelegate.swift */,
+				E3E28E0423A33B810061A3ED /* Model */,
 				E3115F5D2312E16F009FF868 /* View */,
 				E3115F5B2312E11A009FF868 /* Controller */,
 				E3D6FD5922EDD71600CBD0EC /* Info.plist */,
 				E3D6FD5A22EDD71600CBD0EC /* PushNotificationPayload.apns */,
 			);
 			path = "CrownFortune WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		E3E28E0423A33B810061A3ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3E28E0523A33B9B0061A3ED /* crownValue.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D6FD5622EDD71500CBD0EC /* NotificationController.swift in Sources */,
+				E3E28E0623A33B9B0061A3ED /* crownValue.swift in Sources */,
 				E3D6FD5422EDD71500CBD0EC /* ExtensionDelegate.swift in Sources */,
 				E3D6FD5222EDD71500CBD0EC /* InterfaceController.swift in Sources */,
 			);

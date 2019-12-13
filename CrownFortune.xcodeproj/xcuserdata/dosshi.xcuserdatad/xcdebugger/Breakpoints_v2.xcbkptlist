@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AD593974-7C04-4522-95B9-73D8AB0D1A80"
+            uuid = "445F45AC-7710-41F3-8610-9F1DC1229AB7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CrownFortune WatchKit Extension/Controller/InterfaceController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "spinHandle(rotationValue:beforeRotationValue:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7642C885-A0F9-498B-9A0B-60594C038C41"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrownFortune WatchKit Extension/Controller/InterfaceController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "spinHandle(rotationValue:beforeRotationValue:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "crownDidRotate(_:rotationalDelta:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -16,12 +16,8 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
     @IBOutlet weak var handleImage: WKInterfaceImage!
     @IBOutlet weak var gachaImage: WKInterfaceImage!
     
-    final let MAX_ROTATION_VALUE = 72.0
-    final let MIN_ROTATION_VALUE = 0.0
+    let crownValue = CrownValue()
     
-    var countRotation:Double = 1.0
-    var oldCountValue:Double = 72.0
-    var changeCountValue:Double = 0.0
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         let monitoringCrown = self.crownSequencer //crown関連のイベントを監視するインスタンスの取得
@@ -49,31 +45,22 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
     ///     - rotationalDelta: Digital Crownを前回の変更からいくつまわしたかの判定
     /// - Returns: nothing
     func crownDidRotate(_: WKCrownSequencer?, rotationalDelta: Double){
-        countRotation += floor(rotationalDelta*100)
-        if countRotation >= MAX_ROTATION_VALUE {
-            countRotation = 1.0
-        } else if countRotation <= MIN_ROTATION_VALUE {
-            countRotation = 71.0
-        }
-        changeCountValue += (MAX_ROTATION_VALUE - countRotation)
-        print(changeCountValue)
-        if(changeCountValue >= 4000.0){
+        
+        crownValue.convertRotationalDelta(rotationalDelta)
+        
+        if crownValue.isReachValueToShowResult() {
             gachaImage.setImageNamed("red")
+            pushController(withName: "ResultView", context: nil)
         } else {
-            spinHandle(rotationValue: countRotation, beforeRotationValue: oldCountValue)
+            crownValue.changeValueCalculate()
+            setHandleAnimations(crownValue.getCountRotationValue(), crownValue.getOldValue())
         }
         
     }
-
-    func crownDidBecomeIdle(_: WKCrownSequencer?) {
-        print("crownDidBecomeIdle")
+    
+    func setHandleAnimations(_ rotationValue: Double, _ beforeRotationValue: Double) {
+        handleImage.setImageNamed("handleImage\(Int(rotationValue))")
+        print("handleImage\(Int(rotationValue))")
     }
     
-    func spinHandle(rotationValue: Double, beforeRotationValue: Double) {
-        print("handleImage\(Int(rotationValue))")
-        let imageName:String? = "handleImage\(Int(rotationValue))"
-        handleImage.setImageNamed(imageName)
-        countRotenLabel.setText(String("\(countRotation)"))
-    }
 }
-
