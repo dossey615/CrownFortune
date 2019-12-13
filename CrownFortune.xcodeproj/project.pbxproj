@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E30D2C4D23A3222400217720 /* CrownValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D2C4C23A3222400217720 /* CrownValue.swift */; };
 		E3D6FD1922EDD71100CBD0EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6FD1822EDD71100CBD0EC /* AppDelegate.swift */; };
 		E3D6FD1B22EDD71100CBD0EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6FD1A22EDD71100CBD0EC /* ViewController.swift */; };
 		E3D6FD1E22EDD71100CBD0EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D6FD1C22EDD71100CBD0EC /* Main.storyboard */; };
@@ -83,7 +82,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E30D2C4C23A3222400217720 /* CrownValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrownValue.swift; sourceTree = "<group>"; };
 		E3D6FD1522EDD71100CBD0EC /* CrownFortune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrownFortune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D6FD1822EDD71100CBD0EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D6FD1A22EDD71100CBD0EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +97,7 @@
 		E3D6FD3A22EDD71400CBD0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D6FD3D22EDD71400CBD0EC /* CrownFortune WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrownFortune WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D6FD4322EDD71400CBD0EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		E3D6FD4522EDD71500CBD0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../CrownFortune WatchKit App/View/Assets.xcassets"; sourceTree = "<group>"; };
+		E3D6FD4522EDD71500CBD0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../CrownFortune WatchKit App/View/Assets.xcassets"; sourceTree = "<group>"; };
 		E3D6FD4722EDD71500CBD0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D6FD4C22EDD71500CBD0EC /* CrownFortune WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CrownFortune WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D6FD5122EDD71500CBD0EC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
@@ -143,20 +141,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E30D2C4B23A321CE00217720 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E30D2C4C23A3222400217720 /* CrownValue.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E3115F5B2312E11A009FF868 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				E3D6FD5122EDD71500CBD0EC /* InterfaceController.swift */,
 				E3D6FD5522EDD71500CBD0EC /* NotificationController.swift */,
-				E3D6FD4522EDD71500CBD0EC /* Assets.xcassets */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -242,6 +231,7 @@
 				E3115F5B2312E11A009FF868 /* Controller */,
 				E3D6FD5922EDD71600CBD0EC /* Info.plist */,
 				E3D6FD5A22EDD71600CBD0EC /* PushNotificationPayload.apns */,
+				E3D6FD4522EDD71500CBD0EC /* Assets.xcassets */,
 			);
 			path = "CrownFortune WatchKit Extension";
 			sourceTree = "<group>";
