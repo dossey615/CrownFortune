@@ -1,5 +1,5 @@
 //
-//  crownValue.swift
+//  CrownValue.swift
 //  CrownFortune WatchKit Extension
 //
 //  Created by 土居将史 on 2019/12/13.
@@ -10,7 +10,7 @@ import Foundation
 
 class CrownValue {
 
-    final let NEED_VALUE_TO_RESULT: Double = 4000.0 //結果画面を出すのに必要なクラウンの変化量
+    final let NEED_VALUE_TO_RESULT: Double = 2000.0 //結果画面を出すのに必要なクラウンの変化量
     final let MAX_ROTATION_VALUE = 72.0 //変化量の最大値
     final let MIN_ROTATION_VALUE = 0.0 //変化量の最低値
     
@@ -26,15 +26,25 @@ class CrownValue {
         isShowResult = false
     }
 
+    /*
+     ハンドルの回転量の総変化量を計算するメソッド
+     */
     func changeValueCalculate(){
         self.changeValue += (MAX_ROTATION_VALUE - countRotationValue)
     }
 
+    /*
+     ガチャの排出処理に移って胃良いかどうか、回転量を元に判定するメソッド
+     */
     func isReachValueToShowResult() -> Bool {
         isShowResult = changeValue >= NEED_VALUE_TO_RESULT
         return isShowResult
     }
 
+    /*
+     ハンドルを一周した際、その時点のクラウンの値が一周分の最大値、最小値を超えた際、
+     一から数え直すメソッド
+     */
     func checkValueForOverLimit() {
         if countRotationValue >= MAX_ROTATION_VALUE {
             self.setCountRotationValue(1.0)
@@ -42,7 +52,10 @@ class CrownValue {
             self.setCountRotationValue(71.0)
         }
     }
-
+    
+    /*
+     クラウンの回転量を小数点第二位を整数にし、それ以下を切り捨てするメソッド
+    */
     func convertRotationalDelta(_ rotationalDelta: Double) {
         self.countRotationValue += floor(rotationalDelta*100)
         self.checkValueForOverLimit()

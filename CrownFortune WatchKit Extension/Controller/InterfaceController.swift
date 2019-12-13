@@ -11,18 +11,20 @@ import Foundation
 
 class InterfaceController: WKInterfaceController, WKCrownDelegate{
 
-    @IBOutlet weak var countRotenLabel: WKInterfaceLabel!//インターフェース状にcrownを回した数を表示
+    
+    @IBOutlet weak var gachaImageSet: WKInterfaceGroup!
     @IBOutlet weak var handleImage: WKInterfaceImage!
     @IBOutlet weak var gachaImage: WKInterfaceImage!
-    
+   
+        
     let crownValue = CrownValue()
+    let gacha = GachaImages()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         let monitoringCrown = self.crownSequencer //crown関連のイベントを監視するインスタンスの取得
         monitoringCrown.delegate = self
         monitoringCrown.focus();//crownインターフェースにフォーカスし、値の取得を開始する.
-        // Configure interface objects here.
         
     }
     
@@ -48,10 +50,12 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
         crownValue.convertRotationalDelta(rotationalDelta)
         
         if crownValue.isReachValueToShowResult() {
-            gachaImage.setImageNamed("red")
+            gachaImage.setImageNamed(gacha.randomChoiseCase())
             pushController(withName: "ResultView", context: nil)
         } else {
             crownValue.changeValueCalculate()
+            gachaImageSet.setBackgroundImageNamed(
+            gacha.gachaAnimation(crownValue.getCountRotationValue()))
             setHandleAnimations(crownValue.getCountRotationValue(), crownValue.getOldValue())
         }
         
