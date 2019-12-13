@@ -29,31 +29,26 @@
                         <outlet property="countRotenLabel" destination="tg9-WF-U7P" id="wh4-30-LeJ"/>
                         <outlet property="gachaImage" destination="Jk7-v7-XFo" id="IVg-Mp-HYx"/>
                         <outlet property="handleImage" destination="6oC-gZ-sLB" id="873-JV-kUM"/>
-                        <segue destination="Bbn-Iy-ORQ" kind="relationship" relationship="nextPage" id="cF5-F8-F4v"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-171" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--ResultView-->
         <scene sceneID="lgW-tv-sc4">
             <objects>
-                <controller id="Bbn-Iy-ORQ">
+                <controller identifier="ResultView" id="Bbn-Iy-ORQ">
                     <items>
                         <label alignment="center" text="結果" id="DO0-Zt-KQ9"/>
                         <label alignment="center" text="大吉" id="JDM-CX-zf5">
                             <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" pointSize="35"/>
                         </label>
-                        <button width="1" alignment="left" title="もう一回" id="1iW-n9-Df9">
-                            <connections>
-                                <segue destination="AgC-eL-Hgc" kind="push" id="zyE-Hu-Ynq"/>
-                            </connections>
-                        </button>
+                        <button width="1" alignment="left" title="もう一回" id="1iW-n9-Df9"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="161" y="345"/>
+            <point key="canvasLocation" x="101" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
