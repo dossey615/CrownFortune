@@ -8,7 +8,6 @@
 
 import WatchKit
 import Foundation
-import SpriteKit
 
 class InterfaceController: WKInterfaceController, WKCrownDelegate{
 
@@ -64,3 +63,4 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
     }
     
 }
+

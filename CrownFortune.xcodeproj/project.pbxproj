@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E30D2C4D23A3222400217720 /* CrownValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D2C4C23A3222400217720 /* CrownValue.swift */; };
 		E3D6FD1922EDD71100CBD0EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6FD1822EDD71100CBD0EC /* AppDelegate.swift */; };
 		E3D6FD1B22EDD71100CBD0EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6FD1A22EDD71100CBD0EC /* ViewController.swift */; };
 		E3D6FD1E22EDD71100CBD0EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D6FD1C22EDD71100CBD0EC /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E30D2C4C23A3222400217720 /* CrownValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrownValue.swift; sourceTree = "<group>"; };
 		E3D6FD1522EDD71100CBD0EC /* CrownFortune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrownFortune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D6FD1822EDD71100CBD0EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D6FD1A22EDD71100CBD0EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E30D2C4B23A321CE00217720 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E30D2C4C23A3222400217720 /* CrownValue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E3115F5B2312E11A009FF868 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
