@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38"/>
+    <device id="watch44"/>
     <dependencies>
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -32,23 +32,55 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-171" y="345"/>
+            <point key="canvasLocation" x="-44" y="345"/>
         </scene>
-        <!--ResultView-->
+        <!--完了-->
         <scene sceneID="lgW-tv-sc4">
             <objects>
-                <controller identifier="ResultView" id="Bbn-Iy-ORQ">
+                <controller identifier="ResultView" title="完了" contentMode="scaleAspectFill" spacing="0.0" id="Bbn-Iy-ORQ" customClass="ResultInterfaceController" customModule="CrownFortune_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="結果" id="DO0-Zt-KQ9"/>
-                        <label alignment="center" text="大吉" id="JDM-CX-zf5">
-                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" type="system" pointSize="35"/>
-                        </label>
-                        <button width="1" alignment="left" title="もう一回" id="1iW-n9-Df9"/>
+                        <group width="134" height="29" alignment="center" id="e6G-tX-ijG">
+                            <items>
+                                <label alignment="center" verticalAlignment="bottom" text="ガチャ結果" textAlignment="center" baselineAdjustment="alignCenters" id="DO0-Zt-KQ9">
+                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                </label>
+                            </items>
+                        </group>
+                        <separator width="0.90000000000000002" alignment="center" alpha="0.94999999999999996" id="oJ9-ob-T4l">
+                            <color key="color" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </separator>
+                        <group width="1" height="0.10000000000000001" alignment="left" id="eVR-bj-tj3"/>
+                        <group width="0.90000000000000002" height="0.29999999999999999" alignment="center" contentMode="scaleAspectFill" layout="vertical" radius="0.0" id="sg5-rs-okf">
+                            <items>
+                                <group width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="7ag-Ym-Qcy">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="大吉" id="JDM-CX-zf5">
+                                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="boldSystem" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                        <group width="1" height="0.10000000000000001" alignment="left" id="Iqe-Pm-m6k"/>
+                        <button width="0.90000000000000002" height="0.25" alignment="center" verticalAlignment="center" title="もう一度引く" id="1iW-n9-Df9">
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                            <connections>
+                                <action selector="retryButton" destination="Bbn-Iy-ORQ" id="Miw-52-dRY"/>
+                            </connections>
+                        </button>
                     </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="JDM-CX-zf5" id="Hkg-H0-lkB"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="101" y="345"/>
+            <point key="canvasLocation" x="214" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

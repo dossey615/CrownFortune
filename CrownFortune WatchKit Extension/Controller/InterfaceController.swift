@@ -17,24 +17,29 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
     @IBOutlet weak var gachaImage: WKInterfaceImage!
    
         
-    let crownValue = CrownValue()
-    let gacha = GachaImages()
+    var crownValue = CrownValue()
+    var gacha = GachaImages()
+    var isFirst = true
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        let monitoringCrown = self.crownSequencer //crown関連のイベントを監視するインスタンスの取得
-        monitoringCrown.delegate = self
-        monitoringCrown.focus();//crownインターフェースにフォーカスし、値の取得を開始する.
-        
     }
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        let monitoringCrown = self.crownSequencer //crown関連のイベントを監視するインスタンスの取得
+        monitoringCrown.delegate = self
+        monitoringCrown.focus() //crownインターフェースにフォーカスし、値の取得を開始する.
+        
+        //初期設定にする
+        crownValue = CrownValue()
+        gacha = GachaImages()
+        isFirst = true
+        gachaImage.setImage(nil)
+        handleImage.setImageNamed("handleImage1")
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
     
@@ -45,25 +50,28 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
     ///     - _: Digital Crownを変更したかの真理値
     ///     - rotationalDelta: Digital Crownを前回の変更からいくつまわしたかの判定
     /// - Returns: nothing
-    func crownDidRotate(_: WKCrownSequencer?, rotationalDelta: Double){
+    func crownDidRotate(_ WKCrown: WKCrownSequencer?, rotationalDelta: Double){
+        
         
         crownValue.convertRotationalDelta(rotationalDelta)
         
-        if crownValue.isReachValueToShowResult() {
-            gachaImage.setImageNamed(gacha.randomChoiseCase())
-            pushController(withName: "ResultView", context: nil)
+        if crownValue.isReachValueToShowResult() && isFirst{
+            self.isFirst = false
+            let gachaName = gacha.randomChoiseCase()
+            gachaImage.setImageNamed(gachaName)
+            presentController(withName: "ResultView", context: gachaName)
+            
         } else {
             crownValue.changeValueCalculate()
-            gachaImageSet.setBackgroundImageNamed(
-            gacha.gachaAnimation(crownValue.getCountRotationValue()))
-            setHandleAnimations(crownValue.getCountRotationValue(), crownValue.getOldValue())
+            let byCount = crownValue.getCountRotationValue()
+            gachaImageSet.setBackgroundImageNamed(gacha.gachaAnimation(byCount))
+            setHandleAnimations(byCount, nil)
         }
         
     }
     
-    func setHandleAnimations(_ rotationValue: Double, _ beforeRotationValue: Double) {
+    func setHandleAnimations(_ rotationValue: Double, _ beforeRotationValue: Double?) {
         handleImage.setImageNamed("handleImage\(Int(rotationValue))")
-        print("handleImage\(Int(rotationValue))")
     }
     
 }
