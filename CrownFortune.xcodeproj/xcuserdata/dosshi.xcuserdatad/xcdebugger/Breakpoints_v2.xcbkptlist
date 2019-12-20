@@ -14,9 +14,25 @@
             filePath = "CrownFortune WatchKit Extension/Controller/InterfaceController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "crownDidRotate(_:rotationalDelta:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81481122-493C-4C04-951C-0AD550ECF24B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrownFortune WatchKit Extension/Controller/InterfaceController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "awake(withContext:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

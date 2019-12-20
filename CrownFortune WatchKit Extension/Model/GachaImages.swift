@@ -28,7 +28,7 @@ class GachaImages {
     
     func gachaAnimation(_ rotate: Double) -> String {
         var result: String
-        if Int(rotate) % 4 == 0 {
+        if Int(rotate) % 2 == 0 {
             result = animationCase.randomElement()!
             self.recentAnimation = result
             return result

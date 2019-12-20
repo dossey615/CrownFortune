@@ -82,6 +82,13 @@
             </objects>
             <point key="canvasLocation" x="214" y="345"/>
         </scene>
+        <!--test-->
+        <scene sceneID="ku7-vC-kdI">
+            <objects>
+                <controller identifier="test" id="SkM-hN-Tha"/>
+            </objects>
+            <point key="canvasLocation" x="-59" y="636"/>
+        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
@@ -111,7 +118,7 @@
             <objects>
                 <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="CrownFortune_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="492" y="345"/>
         </scene>
     </scenes>
     <resources>

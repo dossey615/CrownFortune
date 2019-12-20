@@ -20,6 +20,7 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
     var crownValue = CrownValue()
     var gacha = GachaImages()
     var isFirst = true
+    var timer:Timer = Timer()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -37,10 +38,12 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
         isFirst = true
         gachaImage.setImage(nil)
         handleImage.setImageNamed("handleImage1")
+        
     }
     
     override func didDeactivate() {
         super.didDeactivate()
+        print("動かない")
     }
     
     
@@ -52,26 +55,41 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
     /// - Returns: nothing
     func crownDidRotate(_ WKCrown: WKCrownSequencer?, rotationalDelta: Double){
         
-        
         crownValue.convertRotationalDelta(rotationalDelta)
         
         if crownValue.isReachValueToShowResult() && isFirst{
             self.isFirst = false
+            WKInterfaceDevice.current().play(.success)
             let gachaName = gacha.randomChoiseCase()
             gachaImage.setImageNamed(gachaName)
-            presentController(withName: "ResultView", context: gachaName)
-            
+            self.crownSequencer.resignFocus() //フォーカスを終了し、値の取得を終了する
+            timer = Timer.scheduledTimer(
+                timeInterval: 2,
+                target: self,
+                selector:  #selector(InterfaceController.showInterface),
+                userInfo: nil,
+                repeats: false
+            )
+           
         } else {
             crownValue.changeValueCalculate()
             let byCount = crownValue.getCountRotationValue()
-            gachaImageSet.setBackgroundImageNamed(gacha.gachaAnimation(byCount))
+            autoreleasepool {
+                gachaImageSet.setBackgroundImageNamed(gacha.gachaAnimation(byCount))
+            }
             setHandleAnimations(byCount, nil)
         }
         
     }
     
+    @objc func showInterface(){
+        presentController(withName: "ResultView", context: nil)
+    }
+    
     func setHandleAnimations(_ rotationValue: Double, _ beforeRotationValue: Double?) {
-        handleImage.setImageNamed("handleImage\(Int(rotationValue))")
+        autoreleasepool {
+            handleImage.setImageNamed("handleImage\(Int(rotationValue))")
+        }
     }
     
 }
