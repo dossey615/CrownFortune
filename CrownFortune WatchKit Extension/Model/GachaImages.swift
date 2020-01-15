@@ -10,10 +10,10 @@ import Foundation
 
 class GachaImages {
     
-    let caseList:Array<String> //ガチャガチャのケースリスト
-    let animationCase:Array<String>//ガチャガチャのアニメーション
+    fileprivate let caseList:Array<String> //ガチャガチャのケースリスト
+    fileprivate let animationCase:Array<String>//ガチャガチャのアニメーション
     
-    var recentAnimation:String
+    fileprivate var recentAnimation:String //
     
     init(){
         caseList = ["red", "yellow", "blue"]
@@ -21,11 +21,15 @@ class GachaImages {
         recentAnimation = "box-1"
     }
     
+    ///
     func randomChoiseCase() -> String{
         let result = caseList.randomElement()!
         return result
     }
     
+    ///ガチャガチャの中のカプセルが動き回るアニメーションを処理するメソッド
+    /// - parameter rotate: crownを回した値
+    /// - returns: セットするイメージファイルの名称
     func gachaAnimation(_ rotate: Double) -> String {
         var result: String
         if Int(rotate) % 2 == 0 {

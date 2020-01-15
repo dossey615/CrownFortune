@@ -10,7 +10,7 @@ import Foundation
 
 class GachaResult {
 
-    var resultList:Array<String> //ガチャの結果一覧
+    fileprivate var resultList:Array<String> //ガチャの結果一覧
     
     init(){
         resultList = ["大吉", "中吉", "吉", "末吉", "凶", "大凶"]
