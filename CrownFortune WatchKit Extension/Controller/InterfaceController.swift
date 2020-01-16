@@ -43,16 +43,14 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
     
     override func didDeactivate() {
         super.didDeactivate()
-        print("動かない")
     }
     
     
     ///
     /// クラウンを操作した際に動くメソッド
-    /// - Parameters:
-    ///     - _: Digital Crownを変更したかの真理値
-    ///     - rotationalDelta: Digital Crownを前回の変更からいくつまわしたかの判定
-    /// - Returns: nothing
+    /// - parameter WKCrown: Digital Crownを変更したかの真理値
+    /// - parameter rotationalDelta: Digital Crownを前回の変更からいくつまわしたかの判定
+    /// - Returns: なし
     func crownDidRotate(_ WKCrown: WKCrownSequencer?, rotationalDelta: Double){
         
         crownValue.convertRotationalDelta(rotationalDelta)
@@ -70,7 +68,6 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
                 userInfo: nil,
                 repeats: false
             )
-           
         } else {
             crownValue.changeValueCalculate()
             let byCount = crownValue.getCountRotationValue()
@@ -86,6 +83,9 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate{
         presentController(withName: "ResultView", context: nil)
     }
     
+    /// UIimageの画像を差し替え、アニメーションを再現するメソッド
+    /// - parameter rotationValue: 今回どれだけcrownを回したか
+    /// - parameter beforeRotationValue: 前回どれほど回したかのcrownの値(nil許容)
     func setHandleAnimations(_ rotationValue: Double, _ beforeRotationValue: Double?) {
         autoreleasepool {
             handleImage.setImageNamed("handleImage\(Int(rotationValue))")
